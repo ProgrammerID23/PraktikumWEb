@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modul 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+    <form action="#" id="form">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label for="nim">NIM:</label>
+        <input type="number" id="nim" name="nim" required><br><br>
+
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" id="tanggal" name="tanggal" required><br><br>
+
+        <label for="alamat">Alamat:</label><br>
+        <textarea id="alamat" name="alamat" cols="21" rows="5" required></textarea><br><br>
+
+        <input type="submit" value="Simpan" onclick="tambahData()">
+    </form>
+    <table id="tabelMahasiswa">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Tanggal</th>
+            <th>Alamat</th>
+        </tr>
+        <!-- Tambahkan baris-baris data mahasiswa lainnya di sini -->
+    </table>
+
+    <script>
+        function tambahData() {
+            // Mengambil nilai dari input formulir
+            var nama = document.getElementById("nama").value;
+            var nim = document.getElementById("nim").value;
+            var tanggal = document.getElementById("tanggal").value;
+            var alamat = document.getElementById("alamat").value;
+
+            // Mendapatkan referensi tabel
+            var tabel = document.getElementById("tabelMahasiswa");
+
+            // Mendapatkan jumlah baris dalam tabel
+            var rowCount = tabel.rows.length;
+
+            // Membuat baris baru di tabel
+            var row = tabel.insertRow(rowCount);
+
+            // Menambahkan sel-sel data ke dalam baris
+            var noCell = row.insertCell(0);
+            var namaCell = row.insertCell(1);
+            var nimCell = row.insertCell(2);
+            var tanggalCell = row.insertCell(3);
+            var alamatCell = row.insertCell(4);
+
+            // Menambahkan data ke dalam sel-sel
+            noCell.innerHTML = rowCount;
+            namaCell.innerHTML = nama;
+            nimCell.innerHTML = nim;
+            tanggalCell.innerHTML = tanggal;
+            alamatCell.innerHTML = alamat;
+
+            // Reset formulir
+            document.getElementById("form").reset();
+        }
+    </script>
+</body>
+</html>
