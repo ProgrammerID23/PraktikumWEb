@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penjumlahan Bilangan</title>
+    <link rel="stylesheet" href="../Codelab/style.css">
+</head>
+<body>
+    <h1>Penjumlahan Bilangan</h1>
+    <input type="text" id="bilangan1" placeholder="Masukkan bilangan pertama">
+    <input type="text" id="bilangan2" placeholder="Masukkan bilangan kedua">
+    <button onclick="tambah()">Jumlahkan</button>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function tambah() {
+            var bilangan1 = parseFloat(document.getElementById('bilangan1').value);
+            var bilangan2 = parseFloat(document.getElementById('bilangan2').value);
+
+            if (!isNaN(bilangan1) && !isNaN(bilangan2)) {
+                var hasil = bilangan1 + bilangan2;
+                document.getElementById('hasil').textContent = hasil;
+            } else {
+                alert('Masukkan dua bilangan yang valid.');
+            }
+        }
+    </script>
+</body>
+</html>

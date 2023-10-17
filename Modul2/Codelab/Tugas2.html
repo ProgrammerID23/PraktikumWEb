@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="../Codelab/style.css">
+</head>
+<body>
+        <h1>Form Pendaftaran</h1>
+      
+        <form id="registrationForm" onsubmit="return validateForm()">
+        <div class="form-container">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama">
+            <span class="error" id="namaError"></span><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="emailError"></span><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="passwordError"></span><br>
+
+            <button type="submit">Daftar</button>
+        </div>
+        </form>
+    <script>
+        function validateForm() {
+            var nama = document.getElementById('nama').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (nama === "" || email === "" || password === "") {
+                // Tampilkan pesan alert dalam bentuk pop-up
+                alert("Silakan isi semua data.");
+                return false; // Mencegah pengiriman form jika ada data yang kosong
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
