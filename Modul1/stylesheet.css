@@ -1,0 +1,11 @@
+.btn-log {
+    padding: 5px 25px 5px 25px!IMPORTANT;
+    font-size: 12px;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+.text-over{
+  position: absolute;
+  top: 40%;
+  padding-left: 100px;
+}
