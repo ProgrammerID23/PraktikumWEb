@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>UAP WEB</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#" id="form">
+      <label for="kode">KODE:</label>
+      <input type="number" id="kode" name="kode" required /><br /><br />
+
+      <label for="kode">Harga:</label>
+      <input type="number" id="harga" name="harga" required /><br /><br />
+
+      <input type="submit" value="Simpan" onclick="tambahData()" />
+    </form>
+    <table id="tabelBarang">
+      <tr>
+        <th>Kode</th>
+        <th>Harga</th>
+      </tr>
+    </table>
+
+    <script>
+      function tambahData() {
+        var kode = document.getElementById("kode").value;
+        var harga = document.getElementById("Harga").value;
+
+        var tabel = document.getElementById("tabelBarang");
+
+        var rowCount = tabel.rows.length;
+
+        var row = tabel.insertRow(rowCount);
+
+        var noCell = row.insertCell(0);
+        var kodeCell = row.insertCell(1);
+        var harga = row.insertCell(2);
+
+        noCell.innerHTML = rowCount;
+        banyakCell.innerHTML = banyak;
+        kodeCell.innerHTML = kode;
+        harga.innerHTML = harga
+        document.getElementById("form").reset();
+      }
+
+      const daftarHarga = {
+        A001: 50000,
+        A002: 75000,
+        A001: 30000,
+      };
+      const kode = prompt("Masukkan kode barang:");
+      const jumlahBarang = parseInt(prompt("Masukkan jumlah barang:"));
+
+      let totalBayar = 0;
+      if (daftarHarga.hasOwnProperty(kode)) {
+        totalBayar = daftarHarga[kode] * jumlahBarang;
+      } else {
+        alert("Kode barang tidak valid.");
+      }
+      const uangDibayarkan = parseFloat(
+        prompt(
+          `Total yang harus dibayar: Rp. ${totalBayar}\nMasukkan jumlah uang:`
+        )
+      );
+
+      let kembalian = 0;
+      if (uangDibayarkan >= totalBayar) {
+        kembalian = uangDibayarkan - totalBayar;
+        alert(`Kembalian Anda: Rp. ${kembalian}`);
+      } else {
+        alert("Jumlah uang yang Anda masukkan kurang.");
+      }
+
+
+    </script>
+  </body>
+</html>
